@@ -36,7 +36,7 @@ The data used for this pipeline is GSE60450 available publicly on Gene Expressio
 ## Setup:
 ```bash
 # Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/Jayasrirameshk/rnaseq-pipeline.git
 cd rnaseq-pipeline
 
 # Create and activate the environment
