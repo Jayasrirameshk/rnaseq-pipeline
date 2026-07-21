@@ -3,6 +3,7 @@ library(DESeq2)
 library(yaml)
 library(ggplot2)
 library(pheatmap)
+library(org.Mm.eg.db)
 
 # Reading the config file
 config = read_yaml("config/config.yaml")
@@ -63,3 +64,20 @@ saveRDS(dds, file = file.path(results_dir, "deseq2_res.rds"))
 # VST transformation
 vsd = vst(dds, blind = TRUE)
 write.csv(assay(vsd), file = file.path(results_dir, "vst_transformation.csv"), row.names = TRUE)
+
+# Adding gene annotation
+gene_symbols = mapIds(org.Mm.eg.db,
+                      keys = rownames(res_celltype_df),
+                      column = "SYMBOL",
+                      keytype = "ENTREZID",
+                      multiVals = "first")
+
+res_celltype_df$gene_symbol = gene_symbols[rownames(res_celltype_df)]
+res_preg_vs_virgin_df$gene_symbol = gene_symbols[rownames(res_preg_vs_virgin_df)]
+res_lact_vs_virgin_df$gene_symbol = gene_symbols[rownames(res_lact_vs_virgin_df)]
+res_lact_vs_preg_df$gene_symbol = gene_symbols[rownames(res_lact_vs_preg_df)]
+
+write.csv(res_celltype_df, file = file.path(results_dir, "deseq2_lum_vs_bas.csv"), row.names = TRUE)
+write.csv(res_preg_vs_virgin_df, file = file.path(results_dir, "deseq2_preg_vs_vir.csv"), row.names = TRUE)
+write.csv(res_lact_vs_virgin_df, file = file.path(results_dir, "deseq2_lac_vs_vir.csv"), row.names = TRUE)
+write.csv(res_lact_vs_preg_df, file = file.path(results_dir, "deseq2_lac_vs_preg.csv"), row.names = TRUE)
