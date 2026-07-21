@@ -1,0 +1,24 @@
+# Raw data (too large for Git)
+data/raw/
+
+# Results (reproducible from pipeline, don't need to track)
+results/
+
+# Snakemake internal files
+.snakemake/
+
+# R
+*.rds
+.Rhistory
+.RData
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Mac system files
+.DS_Store
+
+# VS Code
+.vscode/
