@@ -3,17 +3,17 @@
 
 This is a reproducible end-to-end bioinformatics pipeline for RNA sequencing data analysis. This pipeline involves the following steps:
 
-• Downloaded raw counts from GEO (GSE60450)
-• Cleaned counts matrix by removing non-count columns
-• Filtered low expression genes
-• Built sample metadata table
-• Ran DESeq2 differential expression analysis
-• Extracted 4 pairwise comparisons
-• VST normalized counts for visualization
-• Constructed volcano plots for all 4 comparisons
-• Constructed PCA plot
-• Generated heatmap of the top 50 variable genes
-• Wrapped in Snakemake for reproducibility
+- Downloaded raw counts from GEO (GSE60450)
+- Cleaned counts matrix by removing non-count columns
+- Filtered low expression genes
+- Built sample metadata table
+- Ran DESeq2 differential expression analysis
+- Extracted 4 pairwise comparisons
+- VST normalized counts for visualization
+- Constructed volcano plots for all 4 comparisons
+- Constructed PCA plot
+- Generated heatmap of the top 50 variable genes
+- Wrapped in Snakemake for reproducibility
 
 
 ## Background:
