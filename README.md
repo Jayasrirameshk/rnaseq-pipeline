@@ -94,6 +94,22 @@ rnaseq-pipeline/
 | matplotlib | Python | Plotting |
 | numpy | Python | Numerical computing |
 
+## Results
+
+### PCA Plot
+Principal component analysis showing sample clustering by cell type and developmental stage.
+
+![PCA Plot](images/pca_plot.png)
+
+### Heatmap
+Top 50 most variable genes across all 12 samples.
+
+![Heatmap](images/heatmap.png)
+
+### Volcano Plot: Luminal vs Basal
+Differentially expressed genes between luminal and basal mammary epithelial cells.
+
+![Volcano Plot](images/volcano_lum_vs_bas.png)
 
 ## References
 1. Fu NY, Rios AC, Pal B, Soetanto R, Lun AT, Liu K, Beck T, Best SA,
